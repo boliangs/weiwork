@@ -2,9 +2,31 @@ module sendswork
 
 go 1.22.5
 
-require github.com/spf13/viper v1.19.0
+require (
+	github.com/go-redis/redis/v8 v8.11.5
+	github.com/spf13/viper v1.19.0
+	go.etcd.io/etcd/client/v3 v3.5.12
+	golang.org/x/net v0.23.0
+	google.golang.org/grpc v1.62.1
+	google.golang.org/protobuf v1.33.0
+)
 
-require github.com/go-sql-driver/mysql v1.7.0 // indirect
+require (
+	github.com/cespare/xxhash/v2 v2.2.0 // indirect
+	github.com/coreos/go-semver v0.3.0 // indirect
+	github.com/coreos/go-systemd/v22 v22.3.2 // indirect
+	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
+	github.com/go-redis/redis v6.15.9+incompatible // indirect
+	github.com/go-sql-driver/mysql v1.7.0 // indirect
+	github.com/gogo/protobuf v1.3.2 // indirect
+	github.com/golang-jwt/jwt/v4 v4.5.1 // indirect
+	github.com/golang/protobuf v1.5.3 // indirect
+	go.etcd.io/etcd/api/v3 v3.5.12 // indirect
+	go.etcd.io/etcd/client/pkg/v3 v3.5.12 // indirect
+	go.uber.org/zap v1.21.0 // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20240311132316-a219d84964c2 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240314234333-6e1732d8331c // indirect
+)
 
 require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
@@ -30,5 +52,5 @@ require (
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/driver/mysql v1.5.7
-	gorm.io/gorm v1.25.12 // indirect
+	gorm.io/gorm v1.25.12
 )

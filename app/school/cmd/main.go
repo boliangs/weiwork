@@ -5,16 +5,15 @@ import (
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 	"net"
-	"sendswork/app/user/database/cache"
-	"sendswork/app/user/database/dao"
+	"sendswork/app/school/database/cache"
+	"sendswork/app/school/service"
 	"sendswork/config"
-	userPb "sendswork/idl/pb/user"
+	SchoolPb "sendswork/idl/pb/school"
 	"sendswork/utils/discovery"
 )
 
 func main() {
 	config.InitConfig()
-	dao.InitDB()
 	cache.InitRDB()
 	// etcd 地址
 	etcdAddress := []string{config.Conf.Etcd.Address}
@@ -22,16 +21,16 @@ func main() {
 	password := config.Conf.Etcd.Password
 	// 服务注册
 	etcdRegister := discovery.NewRegister(etcdAddress, username, password, logrus.New())
-	grpcAddress := config.Conf.Services["user"].Addr[0]
+	grpcAddress := config.Conf.Services["school"].Addr[0]
 	defer etcdRegister.Stop()
 	taskNode := discovery.Server{
-		Name: config.Conf.Domain["user"].Name,
+		Name: config.Conf.Domain["school"].Name,
 		Addr: grpcAddress,
 	}
 	server := grpc.NewServer()
 	defer server.Stop()
 	// 绑定service
-	userPb.RegisterUserServiceServer(server, service.GetUserSrv())
+	SchoolPb.RegisterSchoolServiceServer(server, service.GetSchoolSrv())
 	lis, err := net.Listen("tcp", grpcAddress)
 	if err != nil {
 		panic(err)

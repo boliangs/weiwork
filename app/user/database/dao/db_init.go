@@ -1,17 +1,16 @@
 package dao
 
 import (
-	"/config"
 	"context"
 	"fmt"
-	"os"
-	models "sendswork/app/user/database"
-	"strings"
-	"time"
-
 	"github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"os"
+	"sendswork/app/user/database/models"
+	"sendswork/config"
+	"strings"
+	"time"
 )
 
 var _db *gorm.DB
