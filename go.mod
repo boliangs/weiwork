@@ -21,6 +21,8 @@ require (
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang-jwt/jwt/v4 v4.5.1 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
+	github.com/rabbitmq/amqp091-go v1.10.0 // indirect
+	github.com/shopspring/decimal v1.4.0 // indirect
 	go.etcd.io/etcd/api/v3 v3.5.12 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.12 // indirect
 	go.uber.org/zap v1.21.0 // indirect
