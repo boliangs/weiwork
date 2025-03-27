@@ -7,8 +7,8 @@ import (
 
 type Bill struct {
 	gorm.Model
-	StuNum            string    `gorm:"type:varchar(20);not null;unique"` //学号
-	BestRestaurant    string    `gorm:"type:varchar(20);"`                //最喜欢餐厅
+	StuNum            string    `gorm:"types:varchar(20);not null;unique"` //学号
+	BestRestaurant    string    `gorm:"types:varchar(20);"`                //最喜欢餐厅
 	BestRestaurantPay float64   //最喜欢餐厅的花销
 	EarlyTime         time.Time //最早用餐
 	LastTime          time.Time //最晚用餐
